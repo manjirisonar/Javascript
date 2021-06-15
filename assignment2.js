@@ -1,11 +1,19 @@
 var value1 =document.getElementById("number12").value;
-console.log("value1-"+value1);
+var value2;
+//console.log("value1-"+value1);
+
+function onchangeval(){
+    value1 =document.getElementById("number12").value;
+    value2 = parseInt(value1);
+    console.log("VALUE2-"+value2);
+}
 
 const operatnGetSet = {
 
-    val: this.value1,//document.getElementById("number1").value,
+    val: this.value2,//document.getElementById("number1").value,
+
     get incr() {
-        console.log(this.val);
+        console.log("incr "+this.val);
         return this.val;//this.val;
     },
     set increm(inc) {
@@ -40,7 +48,6 @@ const operatnGetSet = {
 
  
 function increment(){
-    
     var incr = operatnGetSet.incr;
     operatnGetSet.increm= ++incr;
 }
